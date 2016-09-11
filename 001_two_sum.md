@@ -16,12 +16,12 @@ Example:
 ### 2.1. Naive Way
 
 Two nested For loops.  
-Complexity: <img src="http://chart.googleapis.com/chart?cht=tx&chl= \mathcal{O}(n^2)" style="border:none;">
+Complexity: O(n^2)
 
 ### 2.2. Using Map
 
 One traverse through the array, push the number into the map. Search target-number in the map.  
-Complexity: <img src="http://chart.googleapis.com/chart?cht=tx&chl= \mathcal{O}(n)" style="border:none;">
+Complexity: O(n)
 
 ## 3. Code
 
@@ -30,16 +30,16 @@ class Solution {
 public:
     vector<int> twoSum(vector<int>& nums, int target) {
         map<int, int> m;
+        map<int, int>::iterator it;
         vector<int> rv;
         for (int i = 0; i < nums.size(); i ++){
-            if (m.find(target-nums[i]) != m.end()){
-                rv.push_back(m[target-nums[i]]);
-                rv.push_back(i + 1);
-                return rv;
+            if ((it = m.find(nums[i])) != m.end()){
+                rv.push_back(it->second);
+                rv.push_back(i);
             }
-            else
-                m[nums[i]] = i + 1;
+            m[target-nums[i]] = i;
         }
+        return rv;
     }
 };
 ```
