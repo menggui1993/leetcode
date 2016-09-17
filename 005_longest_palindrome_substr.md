@@ -30,6 +30,10 @@ Time complexity: O(n^2)
 
 Space complexity: O(n)
 
+### 2.3 Manacher
+
+http://blog.csdn.net/laojiu_/article/details/50931672
+
 ## 3. Code
 
 ### 3.1 DP
@@ -69,7 +73,7 @@ public:
 };
 ```
 
-### 3.2 Center
+### 3.2 Center Expansion
 ```c++
 class Solution {
 public:
